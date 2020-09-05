@@ -53,7 +53,7 @@ const Menu: React.FC<MenuProps> = (props) => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>
       const { displayName } = childElement.type
-      if (displayName === 'MeunItem') {
+      if (displayName === 'MenuItem') {
         // return React.cloneElement(child)
         // 修改子组件，并把 index 属性 给childElement 传递过去，将组件与props(index) 合并
         return React.cloneElement(childElement, {
