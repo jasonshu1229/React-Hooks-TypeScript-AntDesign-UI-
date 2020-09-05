@@ -21,8 +21,6 @@ export type AlertProps = Partial<NativeAlertProps>;
 const Alert: React.FC<AlertProps> = (props) => {
   const { type, className, message, alertState, ...restProps } = props;
   const [state, setState] = React.useState({isShow: alertState});
-  console.log('alertState', alertState);
-  console.log('state.isShow', state.isShow);
   const classes = classNames("alert", className, {
     [`alert-${type}`]: type
   })

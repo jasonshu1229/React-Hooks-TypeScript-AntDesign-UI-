@@ -1,6 +1,8 @@
 import React from 'react';
 import Button, { ButtonSize, ButtonType } from './components/Button/button';
 import Alert, { AlertType } from './components/Alert/alert';
+import Menu from './components/Menu/menu';
+import MenuItem from './components/Menu/menuItem';
 
 function App() {
   return (
@@ -19,6 +21,13 @@ function App() {
         <Alert type={AlertType.Default} alertState={true} message="this is Default alert"/>
         <Alert type={AlertType.Warning} alertState={true} message="this is Warning alert"/>
         <Alert type={AlertType.Danger} alertState={true} message="this is Danger alert"/>
+        <br/>
+        <br/>
+        <Menu defaultIndex={0} onSelect={(index) => alert(index)}>
+          <MenuItem index={1}>cool link1</MenuItem>
+          <MenuItem index={2} disabled>cool link2</MenuItem>
+          <MenuItem index={3}>cool link3</MenuItem>
+        </Menu>
       </header>
     </div>
   );

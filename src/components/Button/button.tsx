@@ -10,14 +10,15 @@ export enum ButtonType {
   Primary = "primary",
   Default = 'default',
   Danger = 'danger',
-  Link = 'link'
+  Link = 'link',
+  Dashed = "dashed",
 } 
 
 interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
   size?: ButtonSize;
-  btnType?: ButtonType;
+  btnType?: "primary" | "default" | "dashed" | "danger" | "link";
   children: React.ReactNode,
   href?: string
 }
