@@ -1,0 +1,37 @@
+.alert{
+  width: 600px;
+  position: relative !important;
+  display: inline-block;
+  font-weight: $alert-font-weight;
+  line-height: $alert-line-height;
+  color:$white;
+  white-space: normal;
+  text-align: left;
+  vertical-align: middle;
+  background-image: none;
+  border: $alert-border-width solid transparent;
+  font-size: $font-size-base;
+  border-radius: $border-radius;
+  padding: $btn-padding-y $btn-padding-x;
+  .close {
+    position: absolute;
+    right: 10px;
+    color: $white;
+    font-size: $font-size-sm;
+  }
+}
+
+.alert-success {
+  @include alert-style($success)
+}
+
+.alert-default {
+  @include alert-style($primary)
+}
+
+.alert-danger {
+  @include alert-style($danger)
+}
+.alert-warning {
+  @include alert-style($warning)
+}
