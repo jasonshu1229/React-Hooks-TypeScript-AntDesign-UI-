@@ -16,3 +16,7 @@
 2 ⽀持四种主题颜⾊ export type AlertType = ‘success’ | ‘default’ | ‘danger’ | 'warning’  <br/>
 3 可以包含标题和内容，解释更详细的警告  <br/>
 4 右侧是否显⽰关闭按钮可配置 <br/>
+
+## 最终效果图
+
+![](https://tva1.sinaimg.cn/large/007S8ZIlly1gifubisic6j30qt076wfc.jpg)
