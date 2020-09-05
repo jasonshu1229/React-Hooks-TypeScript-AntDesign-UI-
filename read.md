@@ -12,7 +12,7 @@
 ![](https://tva1.sinaimg.cn/large/007S8ZIlly1gifu84ze46j30eb03574b.jpg)
 
 ### 功能特点：
-1 点击 `close` 整个元素消失 
-2 ⽀持四种主题颜⾊ export type AlertType = ‘success’ | ‘default’ | ‘danger’ | 'warning’ 
-3 可以包含标题和内容，解释更详细的警告 
-4 右侧是否显⽰关闭按钮可配置
+1 点击 `close` 整个元素消失 <br/>
+2 ⽀持四种主题颜⾊ export type AlertType = ‘success’ | ‘default’ | ‘danger’ | 'warning’  <br/>
+3 可以包含标题和内容，解释更详细的警告  <br/>
+4 右侧是否显⽰关闭按钮可配置 <br/>
