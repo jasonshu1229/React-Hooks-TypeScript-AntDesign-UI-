@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-// 一系列的常量
+
 export enum ButtonSize {
   Large = "lg",
   Small = "sm"
