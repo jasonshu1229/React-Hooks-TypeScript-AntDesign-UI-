@@ -26,8 +26,9 @@ export const MenuContext = createContext<IMenuContext>({index: 0})
 const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, style, children, defaultIndex, onSelect } = props;
   const [ currentActive, setActive ] = useState(defaultIndex); // 设置menuItem 高亮的index
-  const classes = classNames("jason-shu", className, {
+  const classes = classNames("jason-menu ", className, {
     'menu-vertical': mode === 'vertical' ,
+    // 'menu-vertical': mode === 'vertical' ,
   })
 
   const handleClick = (index: number) => {
@@ -55,7 +56,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 
 Menu.defaultProps = {
   defaultIndex: 0,
-  mode: 'horizontal',
+  mode: 'vertical',
 }
 
 export default Menu
