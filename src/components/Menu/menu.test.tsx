@@ -5,8 +5,8 @@ import Menu, { MenuProps } from './menu';
 import MenuItem from './menuItem';
 
 const testProps: MenuProps = {
-  defaultIndex: 0, 
-  onSelect: jest.fn(), 
+  defaultIndex: 0,
+  onSelect: jest.fn(),
   className: 'test',
 }
 
@@ -16,16 +16,16 @@ const testVerProps: MenuProps = {
 }
 
 // 测试生成组件
-const generateMenu = (props:MenuProps)=>{
+const generateMenu = (props: MenuProps) => {
   return (
     <Menu {...props}>
-      <MenuItem index={0}>
+      <MenuItem>
         active
       </MenuItem>
-      <MenuItem disabled index={1}>
+      <MenuItem disabled>
         disabled
       </MenuItem>
-      <MenuItem index={2}>
+      <MenuItem>
         xyz
       </MenuItem>
     </Menu>
@@ -42,6 +42,7 @@ describe('test Menu and MenuItem component', () => {
     wrapper = render(generateMenu(testProps)) // 渲染的dom结构
     menuElement = wrapper.getByTestId('test-menu') // 取得dom结构中的 menu节点
     activeElement = wrapper.getByText('active')
+    console.log('activeElement', activeElement)
     disabledElement = wrapper.getByText('disabled')
   })
 

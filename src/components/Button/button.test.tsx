@@ -7,7 +7,7 @@ import Button,{ ButtonType, ButtonProps } from './button'
 //     const element = wrapper.queryByText('Nice')
 //     // expect(element).toBeTruthy()
 //     expect(element).toBeInTheDocument() // 判断组件是否在文档中，可以替代toBeTruthy
-// })
+// })  
 // const defaultProps = {
 //   onClick: jest.fn()
 // } 

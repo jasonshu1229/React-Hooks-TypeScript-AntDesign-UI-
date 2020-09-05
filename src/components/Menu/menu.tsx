@@ -1,5 +1,6 @@
 import React, { useState, createContext } from 'react';
 import classNames from 'classnames';
+import { MenuItemProps } from './menuItem'; // 取出 子组件中被传递的属性
 
 // 定义字符串字面量： 类型用来约束取值只能是某几个字符串中的一个
 type MenuMode = 'horizontal' | 'vertical'; // ts的 字符串字面量  两个中取一个
@@ -25,6 +26,7 @@ export const MenuContext = createContext<IMenuContext>({index: 0})
 
 const Menu: React.FC<MenuProps> = (props) => {
   const { className, mode, style, children, defaultIndex, onSelect } = props;
+  console.log('children', children)
   const [ currentActive, setActive ] = useState(defaultIndex); // 设置menuItem 高亮的index
   const classes = classNames("jason-menu ", className, {
     'menu-vertical': mode === 'vertical' ,
@@ -45,10 +47,30 @@ const Menu: React.FC<MenuProps> = (props) => {
     onSelect: handleClick
   }
 
+  // todo：渲染渲染子组件
+  // displayName 是在子组件中 定义的类型别名，目的：用来判断 children中的每个元素
+  const renderChildren = () => {
+    return React.Children.map(children, (child, index) => {
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>
+      const { displayName } = childElement.type
+      if (displayName === 'MeunItem') {
+        // return React.cloneElement(child)
+        // 修改子组件，并把 index 属性 给childElement 传递过去，将组件与props(index) 合并
+        return React.cloneElement(childElement, {
+          index
+        })
+      } else {
+        console.error("Warning: Menu has a child which is not a MenuItem Component")
+      }
+    })
+  }
+  renderChildren()
+
   return (
     <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
-        {children}
+        {/* 相当于 类组件中的 路由容器 this.props.children */}
+        {renderChildren()}
       </MenuContext.Provider>
     </ul>
   )
